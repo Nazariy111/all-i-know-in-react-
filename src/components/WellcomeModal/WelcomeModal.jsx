@@ -28,7 +28,9 @@ const WelcomeModal = () => {
             <div className={css.modal} onClick={(e)=>e.stopPropagation()}> 
                 <button className={css.closeBtn} onClick={handleClose}>×</button>
                 <h1>welcome to my app</h1>
-                    <p>type <span className={css.span}>&quot;ready&quot;</span> if you are ready<br/> or just click on the close button
+                    <p className={css.text}>type <span className={css.span}>&quot;ready&quot;</span> if you are ready
+                        <br /> or just click on the close button
+                        <br/> or somewhere on the background
                 </p>
                 
                 <input type="text" value={value} onChange={handleChange} />

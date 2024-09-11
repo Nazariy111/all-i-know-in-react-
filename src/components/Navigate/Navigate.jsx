@@ -1,16 +1,23 @@
-import { NavLink, Link} from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import css from './Navigate.module.css';
 
 const Navigate = () => {
     return (
-        <header>
-            <div>
-                <nav>
-                    <ul>
-                        <li>
-                            <NavLink to="/">Home</NavLink>
+        <header className={css.headerContainer}>
+            <div >
+                <nav className={css.nav}>
+                    <ul className={css.navContainer}>
+                        <li className={css.navLink}>
+                            <NavLink className={css.navLinkBtn} to="/">Home</NavLink>
+                        </li >
+                        <li className={css.navLink}>
+                            <NavLink className={css.navLinkBtn} to="/click-counter">Click counter</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/click-counter">Click counter</NavLink>
+                        <li className={css.navLink}>
+                            <NavLink className={css.navLinkBtn} to="/form">Form</NavLink>
+                        </li>
+                        <li className={css.navLink}>
+                            <NavLink className={css.navLinkBtn} to="/formik">Formik</NavLink>
                         </li>
                     </ul>
                     

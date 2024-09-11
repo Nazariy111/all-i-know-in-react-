@@ -1,0 +1,36 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.radioContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.textareaContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+}

@@ -1,0 +1,34 @@
+.navContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    border: 1px solid blueviolet;
+    border-radius: 5px;
+    padding: 5px;
+    width: 120px;
+}
+
+.nav {
+    display: flex;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.navLink {
+    border-radius: 5px;
+} 
+
+.navLinkBtn {
+    min-width: 100%;
+    color: blueviolet
+}
+
+.navLinkBtn:hover,
+.navLinkBtn:focus,
+.navLinkBtn:active {
+    color: white;
+    background-color: blueviolet;
+}

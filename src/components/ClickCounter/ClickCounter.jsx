@@ -35,7 +35,7 @@ const ClickCounter = () => {
             </ul>
             
             
-            <Toaster/>
+            
         </div>
     )
 }

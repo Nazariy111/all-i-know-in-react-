@@ -1,12 +1,13 @@
-import { useState } from 'react'
 import ClickCounter from '../ClickCounter/ClickCounter'
 import WelcomeModal from '../WellcomeModal/WelcomeModal'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Layout from '../Layout/Layout'
+import FormComponent from '../Form/FormComponent'
+import FormikComponent from '../FormikComponent/FormikComponent'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
 
   return (
     <Layout>
@@ -14,6 +15,11 @@ function App() {
       <Routes>
         <Route path="/" element={<div>Home Page</div>} />
         <Route path="/click-counter" element={<ClickCounter />} />
+        <Route path="/form" element={<FormComponent/>} />
+        <Route path="/formik" element={<FormikComponent />}>
+          <Route path="redux-state" element={<div>some state</div> } />
+        </Route>
+        <Route path="*" element={<div>Not found</div>} />
 
       </Routes>
       
@@ -21,5 +27,7 @@ function App() {
     </Layout>
       )
 }
+
+
 
 export default App
