@@ -2,9 +2,13 @@ import toast from 'react-hot-toast';
 import css from './FormComponent.module.css'
 import { useId, useState } from 'react'
 
+import { addInfo } from '../../redux/form/formSlice';
+import { useDispatch } from 'react-redux';
+
 const FormComponent = () => {
 
     const [selectedCheckboxes, setSelectedCheckboxes] = useState([]);
+    const dispatch = useDispatch();
 
     const nameId = useId();
     const emailId = useId();
@@ -19,6 +23,7 @@ const FormComponent = () => {
 
     const handleCheckboxChange = (event) => {
         const { value, checked } = event.target;
+        
 
         if (checked) {
             setSelectedCheckboxes((prev) => [...prev, value]);
@@ -28,10 +33,22 @@ const FormComponent = () => {
     };
 
     const handleSubmit = (e) => {
+        
         e.preventDefault();
         const form = e.target;
         const { name, email, way, status, userMessage } = form.elements;
         console.log(name.value, email.value, way.value, status.value, selectedCheckboxes, userMessage.value);
+        const values = {
+            name: name.value,
+            email: email.value,
+            way: way.value,
+            status: status.value,
+            selected: selectedCheckboxes,
+            message: userMessage.value
+        };
+
+        dispatch(addInfo(values));
+
         toast.success(`hi, ${name.value} 
             email: ${email.value}
             your way - ${way.value}

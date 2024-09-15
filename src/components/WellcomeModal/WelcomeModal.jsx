@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import css from './WelcomeModal.module.css'
 import toast from 'react-hot-toast';
+import { useDispatch, useSelector } from 'react-redux';
+import { offWelcomeModal } from '../../redux/welcomeModal/welcomeModalSlice';
+import { useNavigate } from 'react-router-dom';
 
 const WelcomeModal = () => {
     const [value, setValue] = useState('');
-    const [isOpen, setIsOpen] = useState(true);
+    // const [isOpen, setIsOpen] = useState(false);
+    const isOpen = useSelector(state => state.welcomeModalInfo.isWelcomeModal);
+
+    const navigate = useNavigate();
+    
+    const dispatch = useDispatch();
+    
 
     const handleChange=(e)=>{
         const query = e.target.value;
@@ -12,12 +21,14 @@ const WelcomeModal = () => {
     }
 
     const handleClose = () => {
-        setIsOpen(false);
+        dispatch(offWelcomeModal());
+        navigate("/", { replace: true });
     }
 
     useEffect(() => {
         if (value.toLowerCase() === "ready") {
-            setIsOpen(false);
+            dispatch(offWelcomeModal());
+            navigate("/", { replace: true });
             toast.success("u did it! yeeeeaaah");
         }
     },[value])

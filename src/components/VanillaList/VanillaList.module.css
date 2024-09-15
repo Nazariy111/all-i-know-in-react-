@@ -1,0 +1,13 @@
+.list {
+    display: flex;
+    width: 330px;
+    flex-wrap: wrap;
+    gap: 15px;
+    
+}
+
+.listItem {
+    width: 100px;
+    height: 50px;
+    overflow: hidden;
+}

@@ -19,6 +19,15 @@ const Navigate = () => {
                         <li className={css.navLink}>
                             <NavLink className={css.navLinkBtn} to="/formik">Formik</NavLink>
                         </li>
+                        <li className={css.navLink}>
+                            <NavLink className={css.navLinkBtn} to="/balance">Balance</NavLink>
+                        </li>
+                        <li className={css.navLink}>
+                            <NavLink className={css.navLinkBtn} to="/vanilla-http">Vanilla HTTP</NavLink>
+                        </li>
+                        <li className={css.navLink}>
+                            <NavLink className={css.navLinkBtn} to="/http-redux">HTTP/Redux</NavLink>
+                        </li>
                     </ul>
                     
 

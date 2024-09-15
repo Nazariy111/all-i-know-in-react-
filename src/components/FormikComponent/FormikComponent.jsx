@@ -2,6 +2,8 @@ import { Field, Form, Formik } from "formik"
 import css from './FormikComponent.module.css'
 import { useId, useState } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { newName } from "../../redux/formik/slice"
+import { useDispatch } from "react-redux";
 
 
 const initialValues = {
@@ -16,6 +18,8 @@ const FormikComponent = () => {
     const [myColor, setMyColor] = useState("black");
     const [isInfo, setIsInfo] = useState(false);
 
+    const dispatch = useDispatch();
+
     const textareaId = useId();
     const selectId = useId();
     const radioId = useId();
@@ -23,6 +27,7 @@ const FormikComponent = () => {
     const handleSubmit = (values, actions) => {
         console.log({ ...values, color: myColor });
         setIsInfo(true);
+        dispatch(newName(values.name));
         actions.resetForm();
     };
 

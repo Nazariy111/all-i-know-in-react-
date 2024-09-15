@@ -1,0 +1,7 @@
+.photo {
+    width: 100px;
+    overflow: hidden;
+    height: 75px;
+    object-fit: cover;
+    
+}
