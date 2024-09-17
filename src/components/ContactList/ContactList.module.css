@@ -1,9 +1,8 @@
-.container {
+.list {
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
     
 }
 
-.contactBtn {
-    margin-top: 5px;
-}

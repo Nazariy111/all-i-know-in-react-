@@ -12,4 +12,5 @@
     border: 1px solid lightgrey;
     border-radius: 5px;
     position: relative;
+    overflow-y: scroll;
 }

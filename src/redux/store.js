@@ -8,6 +8,7 @@ import storage from 'redux-persist/lib/storage'
 import welcomeModalReducer from "./welcomeModal/welcomeModalSlice";
 import balanceReducer from "./balance/balanceSlice";
 import httpReduxReducer from "./httpRedux/httpReduxSlice";
+import filterSliceReducer from "./httpRedux/filterSlice";
 
 const formInfoPersistConfig = {
     key: 'nameFromForm',
@@ -41,6 +42,7 @@ export const store = configureStore({
         welcomeModalInfo: persistedWelcomeModalReducer,
         balance: persistedBalanceReducer,
         httpReduxInfo: httpReduxReducer,
+        filterContacts: filterSliceReducer,
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: {

@@ -29,7 +29,6 @@ const VanillaHttpPage = () => {
             try {
                 setIsLoading(true);
                 const response = await getPhotoByQuery(searchWord);
-                console.log(response.data.results);
                 setPhotos(response.data.results);
                 setIsLoading(false)
             } catch (error) {
